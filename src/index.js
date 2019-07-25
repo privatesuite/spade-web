@@ -91,6 +91,16 @@ function capitalizeFirstLetter (string) {
 
 }
 
+function trim (text, max) {
+
+	if (text.length > max) {
+
+		return text.slice(0, max - 3) + "...";
+		
+	} else return text;
+
+}
+
 async function main () {
 
 	spade.setProxy("https://cors-anywhere.herokuapp.com/");
@@ -131,16 +141,16 @@ async function main () {
 			div.innerHTML = `
 			<div>
 
-				<h3><a href="${album.tralbum_url}">${album.title}</a></h3>
+				<h3><a href="${album.tralbum_url}">${trim(album.title, 16)}</a></h3>
 				<span>${album.band_name}</span>
 		
 			</div>
 			
 			<div>
 			
-				<span>${capitalizeFirstLetter(album.genre)} <strong>Genre</strong></span><br>
-				${loc ? `<span>${loc[0].fullname} <strong>Location</strong></span><br>` : ""}
-				<span>${album.featured_track_title} <strong>Featured Track</strong></span>
+				<span><strong>Genre</strong> ${capitalizeFirstLetter(album.genre)}</span><br>
+				<span><strong>Featured Track</strong> ${album.featured_track_title}</span><br>
+				${loc ? `<span><strong>Location</strong> ${loc[0].fullname}</span><br>` : ""}
 
 			</div>
 			`;
