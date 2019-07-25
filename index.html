@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Spade Web</title>
+
+	<link rel="stylesheet/less" type="text/css" href="/less/app.less">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+
+</head>
+<body>
+
+	<div class="app">
+
+		<h1>Spade</h1>
+
+		<p>Spade is a tool that uses Bandcamp's data about artists and albums to aid you in finding lesser known artists that have recently published Vaporwave tracks.</p>
+
+		<input id="amount" type="number" placeholder="Amount of Tracks"> <input id="location" type="text" placeholder="Location"> <button id="search">Search</button>
+
+		<div class="results">
+
+			<div class="top">
+
+				Results
+
+			</div>
+
+			<div class="body">
+
+				<span class="result_text">Press the <i>Search</i> button to get started!</span><br><br>
+
+			</div>
+
+		</div>
+
+	</div>
+	
+	<script src="/src/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+@blue: #007DFF;
+@gray: rgb(224, 224, 224);
+@black: rgb(27, 27, 27);
+@white: white;
+
+@sans: "Arial", "Segoe UI";
+
+@radius: 3px;
+
+@transition: 0.2s all;
+
+* {
+
+	outline: none !important;
+	box-sizing: border-box;
+
+}
+
+html, body {
+
+	margin: 0;
+	padding: 0;
+
+	width: 100%;
+	height: 100%;
+
+	color: @white;
+	font-family: @sans;
+
+}
+
+.app {
+
+	padding: 30px;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: @blue;
+
+	overflow: auto;
+
+}
+
+.headers-generator(@n; @i : 1) when (@i =< @n) {
+	
+	h@{i} {
+
+		margin: 0;
+	
+		font-size: (3em - (@i - 1) * 0.8);
+	
+	}
+
+	.headers-generator(@n; (@i + 1));
+
+}
+
+.headers-generator(6);
+
+a {
+
+	color: @blue;
+	text-decoration: none;
+	
+}
+
+input, button {
+
+	border: none;
+	border-radius: @radius;
+
+	padding: 10px 17px;
+
+	background-color: @white;
+
+	&:hover {
+
+		background-color: @gray;
+
+	}
+	
+	transition: @transition;
+
+}
+
+button {
+
+	font-weight: 700;
+
+	cursor: pointer;
+
+}
+
+.results {
+
+	margin-top: 30px;
+
+	border-radius: @radius;
+
+	color: @black;
+	background-color: @white;
+
+	&>.top {
+
+		border-bottom: 1px solid @gray;
+
+		padding: 25px;
+
+		font-weight: 700;
+
+	}
+
+	&>.body {
+
+		padding: 25px;
+
+		&>.album {
+
+			position: relative;
+
+			border-top: 1px solid @gray;
+
+			padding: 30px 10px;
+
+			h3 {
+
+				margin-bottom: 10px;
+
+			}
+
+			&>*:last-child {
+
+				position: absolute;
+
+				top: 0;
+				right: 0;
+
+				padding: inherit;
+
+				text-align: right;
+
+			}
+		
+		}
+
+		overflow: auto;
+		
+	}
+
+	.result_text {
+
+		color: mix(@gray, @black);
+
+	}
+
+}
