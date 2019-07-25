@@ -149,7 +149,7 @@ async function main () {
 			<div>
 			
 				<span><strong>Genre</strong> ${capitalizeFirstLetter(album.genre)}</span><br>
-				<span><strong>Featured Track</strong> ${album.featured_track_title}</span><br>
+				<span><strong>Featured</strong> ${album.featured_track_title}</span><br>
 				${loc ? `<span><strong>Location</strong> ${loc[0].fullname}</span><br>` : ""}
 
 			</div>
