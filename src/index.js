@@ -141,7 +141,7 @@ async function main () {
 			div.innerHTML = `
 			<div>
 
-				<h3><a href="${album.tralbum_url}">${trim(album.title, 16)}</a></h3>
+				<h3><a href="${album.tralbum_url}">${trim(album.title, 32)}</a></h3>
 				<span>${album.band_name}</span>
 		
 			</div>
